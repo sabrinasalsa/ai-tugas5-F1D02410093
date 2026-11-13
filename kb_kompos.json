@@ -1,0 +1,49 @@
+{
+  "judul": "Penyebab kompos gagal (bau, tidak panas)",
+  "batas": "Aturan berasal dari 2 jurnal pengabdian/kampus Indonesia (kompos kotoran sapi dan sampah organik umum) dan 2 panduan university extension dari AS (iklim sedang). Hanya mencakup kompos tumpukan aerobik skala rumah/kebun. Bukan untuk kompos industri, bokashi, atau vermikompos. Hasilnya saran, bukan keputusan akhir; cek langsung kondisi tumpukan Anda.",
+  "sumber": {
+    "S1": {
+      "judul": "Pembuatan Pupuk Kompos Dari Limbah Kotoran Sapi Untuk Menambah Kesuburan Tanaman Holtikultura Dilahan Perkarangan Rumah Desa Genggelang, Kecamatan Gangga, Kabupaten Lombok Utara",
+      "penerbit": "Jurnal Pengabdian Magister Pendidikan IPA, Universitas Mataram, 2023, 6(3): 545-548",
+      "url": "https://jppipa.unram.ac.id/index.php/jpmpi/article/download/4818/3093/22771",
+      "tanggal_akses": "10 November 2026"
+    },
+    "S2": {
+      "judul": "Pemanfaatan Sampah Organik Sebagai Bahan Baku Pupuk Kompos dan Pengaruhnya Terhadap Tanaman dan Tanah (Inka Dahlianah)",
+      "penerbit": "Klorofil X-1, Juni 2015, Universitas PGRI Palembang",
+      "url": "https://jurnal.um-palembang.ac.id/klorofil/article/download/190/162",
+      "tanggal_akses": "10 November 2026"
+    },
+    "S3": {
+      "judul": "Composting (HGIC 1600)",
+      "penerbit": "Clemson Cooperative Extension, Home & Garden Information Center, Clemson University, revisi 4 April 2024",
+      "url": "https://hgic.clemson.edu/factsheet/composting/",
+      "tanggal_akses": "10 November 2026"
+    },
+    "S4": {
+      "judul": "Make compost that really cooks: troubleshoot heat, odor and pests",
+      "penerbit": "Oregon State University Extension Service",
+      "url": "https://extension.oregonstate.edu/news/make-compost-really-cooks-troubleshoot-heat-odor-pests",
+      "tanggal_akses": "10 November 2026"
+    }
+  },
+  "pertanyaan": {
+    "bau busuk": "Apakah tumpukan berbau busuk (seperti telur busuk)?",
+    "bau amonia": "Apakah tumpukan berbau menyengat seperti amonia?",
+    "terlalu basah": "Apakah bahan terlalu basah (saat digenggam menetes air atau lembek)?",
+    "terlalu kering": "Apakah bahan terlalu kering (saat digenggam langsung pecah/buyar atau bagian tengah kering)?",
+    "jarang dibalik": "Apakah tumpukan jarang atau tidak pernah dibalik?",
+    "banyak bahan hijau": "Apakah bahan didominasi bahan hijau/basah (sisa sayur, rumput segar, kotoran) dibanding bahan cokelat kering (daun kering, serutan kayu)?",
+    "tumpukan kecil": "Apakah tumpukan kecil (hanya sedikit bahan, jauh di bawah ukuran 1 m x 1 m x 1 m)?",
+    "tidak panas setelah 3 hari": "Apakah tumpukan tidak terasa hangat/panas setelah 3 hari?"
+  },
+  "aturan": [
+    {"id": "R1", "jika": ["terlalu basah", "jarang dibalik"], "mode": "atau", "maka": "kurang oksigen", "sumber": ["S1", "S2", "S4"]},
+    {"id": "R2", "jika": ["bau busuk", "kurang oksigen"], "mode": "dan", "maka": "kompos anaerob", "sumber": ["S4"]},
+    {"id": "R3", "jika": ["bau amonia", "banyak bahan hijau"], "mode": "dan", "maka": "nitrogen berlebih", "sumber": ["S3"]},
+    {"id": "R4", "jika": ["terlalu basah", "terlalu kering"], "mode": "atau", "maka": "kelembapan tidak ideal", "sumber": ["S1", "S2", "S3"]},
+    {"id": "R5", "jika": ["kelembapan tidak ideal", "tumpukan kecil", "kurang oksigen"], "mode": "atau", "maka": "mikroba tidak aktif", "sumber": ["S2", "S3", "S4"]},
+    {"id": "R6", "jika": ["mikroba tidak aktif", "tidak panas setelah 3 hari"], "mode": "dan", "maka": "kompos tidak berproses", "sumber": ["S1", "S2"]}
+  ],
+  "kesimpulan_akhir": ["kompos anaerob", "nitrogen berlebih", "kompos tidak berproses"]
+}
