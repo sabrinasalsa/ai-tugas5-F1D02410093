@@ -1,11 +1,10 @@
 # Sistem Pakar Sederhana: Penyebab Kompos Gagal
 
-## 1. Identitas
 
 - Nama: **Sabrina Salsabila**
 - NIM: **F1D02410093**
 
-## 2. Topik dan Cara Menjalankan
+## 1. Topik dan Cara Menjalankan
 
 **Topik:** penyebab kompos gagal pada pengomposan tumpukan skala rumah/kebun (bau busuk, bau amonia, dan tumpukan yang tidak panas).
 
@@ -30,7 +29,7 @@ python kompos_fc.py
 
 Program menanyakan 8 fakta dasar (jawab `y` atau `t`), lalu menampilkan jejak inferensi, kesimpulan, alasan, dan catatan batas keberlakuan.
 
-## 3. Sumber dan Tabel Aturan
+## 2. Sumber dan Tabel Aturan
 
 ### Daftar sumber
 
@@ -67,7 +66,7 @@ Ada 6 aturan dengan 3 kesimpulan akhir . Aturan memakai hasil aturan lain: R2 me
 - Ukuran minimum tumpukan berbeda antar sumber (S3: minimal sekitar 3 kaki kubik atau sekitar 0,08 meter kubik, S4: sekitar 0,5 sampai 1 yard kubik atau sekitar 0,4 sampai 0,75 meter kubik). Karena itu pertanyaan program memakai istilah "jauh di bawah ukuran 1 m x 1 m x 1 m", tanpa angka batas yang kaku.
 - Angka rasio C/N tidak dimasukkan ke aturan. S3 menyebut rasio ideal 30:1, sedangkan S2 menyebut 30:1 sampai 40:1.
 
-## 4. Metode yang Dipilih: Forward Chaining (FC)
+## 3. Metode yang Dipilih: Forward Chaining (FC)
 
 Metode FC dipilih karena arah masalahnya dari gejala ke penyebab. Pemilik kompos biasanya hanya tahu gejala yang terlihat (bau, kelembapan, suhu), lalu ingin tahu penyebabnya. FC cocok karena mulai dari fakta yang dijawab user, menjalankan aturan yang cocok, dan menambahkan hasilnya ke memori sampai tidak ada aturan baru. Bentuk aturannya juga mudah dihubungkan menjadi rantai (misalnya R1 → R5 → R6).
 
@@ -85,7 +84,7 @@ ULANGI:
 
 Syarat terpenuhi: mode `dan` berarti semua syarat ada di memori, mode `atau` berarti salah satu ada. Aturan yang hasilnya sudah ada di memori tidak dijalankan lagi, sehingga program tidak berputar terus.
 
-## 5. Kasus Uji dan Screenshot
+## 4. Kasus Uji dan Screenshot
 
 | # | Jawaban "ya" | Kesimpulan yang diharapkan |
 |---|---|---|
@@ -105,10 +104,9 @@ Syarat terpenuhi: mode `dan` berarti semua syarat ada di memori, mode `atau` ber
 
 ![Kasus 3](screenshot/Kasus3.png)
 
-## 6. Batas Keberlakuan
+## 5. Batas Keberlakuan
 
-Pengetahuan dalam program ini berasal dari dua jurnal pengabdian/kampus Indonesia (kompos kotoran sapi dan sampah organik umum) serta dua panduan university extension dari Amerika Serikat yang beriklim sedang, sehingga sebagian aturan (misalnya R2, R3, dan R5) belum tentu pas dengan kondisi tropis. Aturan hanya mencakup kompos tumpukan aerobik skala rumah atau kebun, dan tidak berlaku untuk kompos industri, bokashi, atau vermikompos. Hasilnya berupa saran, bukan keputusan akhir; kondisi tumpukan yang sebenarnya tetap perlu dicek langsung. Catatan ini juga ditampilkan di akhir keluaran program.
-
-## 7. Penggunaan Alat Bantu AI
+Pengetahuan dalam program ini berasal dari dua jurnal pengabdian/kampus Indonesia (kompos kotoran sapi dan sampah organik umum) serta dua panduan university extension dari Amerika Serikat yang beriklim sedang, sehingga sebagian aturan (misalnya R2, R3, dan R5) belum tentu pas dengan kondisi tropis. Aturan hanya mencakup kompos tumpukan aerobik skala rumah atau kebun, dan tidak berlaku untuk kompos industri, bokashi, atau vermikompos. Hasilnya berupa saran, bukan keputusan akhir. Kondisi tumpukan yang sebenarnya tetap perlu dicek langsung. 
+## 6. Penggunaan Alat Bantu AI
 
 Saya memakai Claude sebagai alat bantu untuk brainstorming topik lalu notebooklm sebagai alat bantu untuk mencari jurnal yang berkaitan dengan topik
